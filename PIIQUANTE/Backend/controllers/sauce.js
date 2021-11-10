@@ -16,8 +16,8 @@ exports.createSauce = (req, res, next) => {
     }`,
     likes: 0,
     dislikes: 0,
-    usersLiked: ["test "],
-    usersDisliked: ["test "],
+    usersLiked: [" "],
+    usersDisliked: [" "],
   });
   sauce
     .save()

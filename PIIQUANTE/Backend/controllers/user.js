@@ -6,6 +6,9 @@ const jwt = require("jsonwebtoken");
 // // Import du model User (cf Ctrl sign)
 const User = require("../models/User");
 
+// // Import env
+require("dotenv").config();
+
 // // Export Ctrl sign up
 exports.signup = (req, res, next) => {
   bcrypt
@@ -40,9 +43,10 @@ exports.login = (req, res, next) => {
             userId: user._id,
             token: jwt.sign(
               { userId: user._id },
-              "RANDOM_TOKEN_SECRET", 
+              process.env.RANDOM_TOKEN_SECRET,
+              //"RANDOM_TOKEN_SECRET",
               { expiresIn: "24h" }
-              )
+            ),
           });
         })
         .catch((error) => res.status(500).json({ error }));
