@@ -11,13 +11,10 @@ module.exports = (req, res, next) => {
     let manufacturerValid = regexInput.test(manufacturer);
     let mainPepperValid = regexInput.test(mainPepper);
 
-    nameValid && descriptionValid && manufacturerValid && mainPepperValid
-      ? next()
-      : res.status(400).json({ message: "syntaxe incorrecte" });
+    nameValid && descriptionValid && manufacturerValid && mainPepperValid ? next() : res.status(400).json({ message: "syntaxe incorrecte" });
     console.log("name", nameValid);
     console.log("manufacturer", manufacturerValid);
     console.log("description", descriptionValid);
-
     console.log("mainpepper", mainPepperValid);
   };
 

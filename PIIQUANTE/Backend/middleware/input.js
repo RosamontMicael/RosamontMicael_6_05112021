@@ -14,9 +14,8 @@ module.exports = (req, res, next) => {
     nameValid && descriptionValid && manufacturerValid && mainPepperValid ? next() : res.status(400).json({ message: "syntaxe incorrecte" });
     console.log("name", nameValid);
     console.log("manufacturer", manufacturerValid);
-     console.log("description", descriptionValid);
-     
-     console.log("mainpepper", mainPepperValid);
+    console.log("description", descriptionValid);
+    console.log("mainpepper", mainPepperValid);
   };
 
   regexFilter(
